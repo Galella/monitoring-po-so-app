@@ -101,8 +101,8 @@ return [
     */
 
     'permissions' => [
-        'separator' => ':',
-        'case' => 'pascal',
+        'separator' => '_',
+        'case' => 'snake',
         'generate' => true,
     ],
 
@@ -176,8 +176,23 @@ return [
                 'viewAny',
                 'view',
                 'create',
+                'delete',
+            ],
+            \App\Filament\Resources\CmData\CmDataResource::class => [
+                'viewAny',
+                'view',
+                'create',
                 'update',
                 'delete',
+                'import',
+            ],
+            \App\Filament\Resources\CoinsData\CoinsDataResource::class => [
+                'viewAny',
+                'view',
+                'create',
+                'update',
+                'delete',
+                'import',
             ],
         ],
         'exclude' => [
@@ -235,7 +250,10 @@ return [
     |
     */
 
-    'custom_permissions' => [],
+    'custom_permissions' => [
+        'view_monitoring_po',
+        'export_monitoring_po',
+    ],
 
     /*
     |--------------------------------------------------------------------------

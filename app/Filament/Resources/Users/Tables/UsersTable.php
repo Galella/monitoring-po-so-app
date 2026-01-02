@@ -28,6 +28,16 @@ class UsersTable
                     ->badge()
                     ->label('Roles')
                     ->sortable(),
+                TextColumn::make('wilayah.name')
+                    ->label('Wilayah')
+                    ->sortable()
+                    ->searchable()
+                    ->toggleable(),
+                TextColumn::make('area.name')
+                    ->label('Area')
+                    ->sortable()
+                    ->searchable()
+                    ->toggleable(),
                 TextColumn::make('email_verified_at')
                     ->label('Email Verified')
                     ->date()

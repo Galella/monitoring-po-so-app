@@ -51,6 +51,18 @@ class UserForm
                             ->relationship('roles', 'name')
                             ->preload()
                             ->searchable(),
+                        Select::make('wilayah_id')
+                            ->label('Wilayah')
+                            ->relationship('wilayah', 'name')
+                            ->searchable()
+                            ->preload()
+                            ->inlineLabel(),
+                        Select::make('area_id')
+                            ->label('Area')
+                            ->relationship('area', 'name')
+                            ->searchable()
+                            ->preload()
+                            ->inlineLabel(),
 
                 ]);
     }

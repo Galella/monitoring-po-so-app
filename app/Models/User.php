@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
@@ -23,6 +24,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'area_id',
+        'wilayah_id',
     ];
 
     /**
@@ -58,4 +61,35 @@ class User extends Authenticatable
         return $this->name;
     }
 
+    /**
+     * Get the area this user belongs to.
+     */
+    public function area(): BelongsTo
+    {
+        return $this->belongsTo(Area::class);
+    }
+
+    /**
+     * Get the wilayah this user belongs to.
+     */
+    public function wilayah(): BelongsTo
+    {
+        return $this->belongsTo(Wilayah::class);
+    }
+
+    /**
+     * Check if user is a User Area.
+     */
+    public function isUserArea(): bool
+    {
+        return $this->area_id !== null && $this->hasRole('user_area');
+    }
+
+    /**
+     * Check if user is a User Wilayah.
+     */
+    public function isUserWilayah(): bool
+    {
+        return $this->wilayah_id !== null && $this->hasRole('user_wilayah');
+    }
 }
