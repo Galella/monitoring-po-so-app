@@ -1,3 +1,0 @@
-ppcw,container,seal,shipper,consignee,status,commodity,size,weight,keterangan,cm,atd,no_order_coins
-PPCW001,CONT1234567,SEAL001,PT Shipper A,PT Consignee B,LOADED,General Cargo,20,15000,Keterangan contoh,CM2024001,2024-01-15,ORD001
-PPCW002,CONT7654321,SEAL002,PT Shipper C,PT Consignee D,EMPTY,Electronics,40,25000,Contoh data kedua,CM2024002,2024-01-16,ORD002
